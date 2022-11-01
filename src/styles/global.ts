@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-import imgBackground from '../assets/background.svg'
+import imgBackground from "../assets/background.svg";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
+    body, input, textarea, select, button {
+        font: 400 1rem "Roboto", sans-serif;
+    }
+
     #root {
         max-width: 960px;
         margin: 0 auto;
@@ -37,4 +41,4 @@ export const GlobalStyle = createGlobalStyle`
         color: inherit;
         text-decoration: none;
     }
-`
+`;
