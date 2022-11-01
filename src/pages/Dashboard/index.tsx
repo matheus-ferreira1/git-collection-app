@@ -1,5 +1,6 @@
 import React from "react";
+import { Title } from './styles'
 
 export const Dashboard: React.FC = () => {
-  return <div>Dashboard</div>;
+  return <Title>Dashboard</Title>;
 };
