@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface FormProps {
+  hasError: boolean;
+}
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const Title = styled.h1`
   font-size: 48px;
@@ -8,10 +19,11 @@ export const Title = styled.h1`
   margin-top: 80px;
 `;
 
-export const Form = styled.form`
+export const Form = styled.form<FormProps>`
   margin-top: 40px;
   max-width: 700px;
   display: flex;
+  width: 100%;
 
   input {
     flex: 1;
@@ -21,6 +33,12 @@ export const Form = styled.form`
     border-radius: 5px 0px 0px 5px;
     color: #3a3a3a;
     border-right: 0;
+
+    ${(props) =>
+      props.hasError &&
+      css`
+        border-color: #c53030;
+      `}
 
     &::placeholder {
       color: #a8a8b3;
@@ -44,7 +62,7 @@ export const Form = styled.form`
 
 export const Repos = styled.div`
   margin-top: 80px;
-  min-width: 700px;
+  max-width: 700px;
 
   a {
     background: #fff;
@@ -90,4 +108,10 @@ export const Repos = styled.div`
       color: #cbcbd6;
     }
   }
+`;
+
+export const Error = styled.span`
+  display: block;
+  color: #c53030;
+  margin-top: 8px;
 `;
