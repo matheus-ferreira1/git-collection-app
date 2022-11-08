@@ -20,7 +20,7 @@ interface GihubRepository {
   };
 }
 
-export const Dashboard: React.FC = () => {
+const Dashboard: React.FC = () => {
   const [repos, setRepos] = useState<GihubRepository[]>(() => {
     const storageRepos = localStorage.getItem("@GitCollection:repositories");
 
@@ -86,10 +86,10 @@ export const Dashboard: React.FC = () => {
       {inputError && <Error>{inputError}</Error>}
 
       <Repos>
-        {repos.map((repository) => (
+        {repos.map((repository, index) => (
           <Link
             to={`/repositories/${encodeURIComponent(repository.full_name)}`}
-            key={repository.full_name}
+            key={repository.full_name + index}
           >
             <img
               src={repository.owner.avatar_url}
@@ -106,3 +106,5 @@ export const Dashboard: React.FC = () => {
     </Wrapper>
   );
 };
+
+export default Dashboard;
