@@ -6,7 +6,7 @@ export const MyRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
-      <Route path="/repositories" element={<Repo />} />
+      <Route path="/repositories/:repository" element={<Repo />} />
     </Routes>
   );
 };

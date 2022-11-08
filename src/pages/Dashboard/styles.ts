@@ -112,6 +112,9 @@ export const Repos = styled.div`
 
 export const Error = styled.span`
   display: block;
+  max-width: 700px;
+  width: 100%;
   color: #c53030;
   margin-top: 8px;
+  align-self: center;
 `;
